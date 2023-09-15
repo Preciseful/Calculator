@@ -1,3 +1,5 @@
+using System;
+using System.Data;
 using Avalonia.Controls;
 using Avalonia.Interactivity;
 using Avalonia.Media;
@@ -22,10 +24,11 @@ public partial class MainWindow : Window {
         if (expressionBox.Text == null) return;
 
         resultBox.Foreground = ForegroundBrush;
-        Calculator calculator = new Calculator(expressionBox.Text);
-        
-        try { calculator.Parse(); }
-        catch (CalculatorException exception) {
+        Parser.Calculator calculator = new Parser.Calculator(expressionBox.Text);
+
+        try { resultBox.Text = $"Result: {calculator.Calculate()}."; }
+        catch (Exception exception) when (exception is CalculatorException ||
+                                          exception is SyntaxErrorException) {
             resultBox.Foreground = Brushes.Red;
             resultBox.Text = exception.Message;
         }
