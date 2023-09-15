@@ -1,0 +1,76 @@
+<Window 
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  xmlns:vm="using:Developful.ViewModels"
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+  mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+  x:Class="Developful.Views.MainWindow"
+  x:DataType="vm:MainWindowViewModel"
+  Background="{DynamicResource BackgroundBrush}"
+  Icon="/Assets/avalonia-logo.ico"
+  Title="Calculator">
+
+  <Design.DataContext>
+      <!-- This only sets the DataContext for the previewer in an IDE,
+           to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+      <vm:MainWindowViewModel/>
+  </Design.DataContext>
+  
+  <Grid>
+    <TextBlock 
+      HorizontalAlignment="Center" 
+      VerticalAlignment="Top"
+      Margin="0, 15, 0, 0"
+      FontSize="20">
+      Calculator Application
+    </TextBlock>
+    <TextBlock 
+      HorizontalAlignment="Center" 
+      VerticalAlignment="Top"
+      Margin="0, 50, 0, 0"
+      FontSize="14">
+      By Developful
+    </TextBlock>
+    
+    <TextBox
+      HorizontalAlignment="Center" 
+      VerticalAlignment="Center"
+      Watermark="Write your expression here..."
+      MinWidth="400"
+      MaxWidth="400"
+      AcceptsReturn="False"
+      AcceptsTab="False"
+      MinHeight="100"
+      MaxHeight="100"
+      x:Name="expressionBox"
+      CornerRadius="5, 0, 0, 5"
+      Margin="0, 0, 150, 0">
+    </TextBox>
+    
+    <TextBox
+      HorizontalAlignment="Center" 
+      VerticalAlignment="Center"
+      Watermark="Calculator result"
+      TextWrapping="Wrap"
+      MinWidth="150"
+      MaxWidth="150"
+      MinHeight="100"
+      MaxHeight="100"
+      x:Name="resultBox"
+      CornerRadius="0, 5, 5, 0"
+      IsReadOnly="True"
+      Focusable="False"
+      Margin="400, 0, 0, 0"/>
+    
+    <Button 
+      HorizontalAlignment="Center" 
+      VerticalAlignment="Center"
+      Margin="0, 350, 0, 0"
+      Background="{DynamicResource ForegroundBrush}"
+      Foreground="{DynamicResource BackgroundBrush}"
+      Click="Calculate">
+      Calculate
+    </Button>
+  </Grid>
+</Window>

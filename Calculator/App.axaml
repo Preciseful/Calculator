@@ -1,0 +1,37 @@
+<Application 
+  xmlns="https://github.com/avaloniaui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+  x:Class="Developful.App"
+  xmlns:local="using:Developful"
+  RequestedThemeVariant="Default">
+
+  <Application.DataTemplates>
+    <local:ViewLocator/>
+  </Application.DataTemplates>
+  
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key='Dark'>
+          <SolidColorBrush x:Key='BackgroundBrush'>#1A1B26</SolidColorBrush>
+          <SolidColorBrush x:Key='BorderBrush'>#C0CEFC</SolidColorBrush>
+          <SolidColorBrush x:Key='ForegroundBrush'>#C0CEFC</SolidColorBrush>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key='Light'>
+          <SolidColorBrush x:Key='BackgroundBrush'>White</SolidColorBrush>
+          <SolidColorBrush x:Key='BorderBrush'>Black</SolidColorBrush>
+          <SolidColorBrush x:Key='ForegroundBrush'>Black</SolidColorBrush>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+    <FontFamily x:Key="PoppinsFont">avares://Calculator/Assets/Fonts#Poppins</FontFamily>
+  </Application.Resources>
+             
+  <Application.Styles>
+    <FluentTheme />
+    
+    <Style Selector="TextBlock">
+      <Setter Property="FontFamily" Value="{StaticResource PoppinsFont}"/>
+    </Style>
+  </Application.Styles>
+</Application>
