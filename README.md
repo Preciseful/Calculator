@@ -18,4 +18,4 @@ Here's an example of an expression: <br/>
 Simple right?
 
 ## Why?
-It has little to no actual real value in the real world. You're probably better off just searching on google than building this project. I made it just to learn Avalonia!
+It has little to no actual real value in the real world. You're probably better off just searching on google than building this project, since it's just for learning purposes
